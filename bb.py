@@ -19,7 +19,7 @@ def main(program=None,threads=None,recursiveness=None):
             continue
         cd = ContentDiscovery(f"https://{i}/", threads, recursiveness,program)
         for j in cd:
-            pm = ParamMiner(j, threads)
+            pm = ParamMiner(j, threads,program)
             for k in pm:
                 XSStrike(k, threads,program)
 
