@@ -15,7 +15,7 @@ def checkScope(include, exclude, result):
     exists=False
     for i in include:
         if i["enabled"]:
-            inScope = re.match(i["host"], result.split("/"))
+            inScope = re.match(i["host"], result)
             if inScope:
                 exists=True
                 break
@@ -26,3 +26,4 @@ def checkScope(include, exclude, result):
             exScope = re.match(i["host"], result)
             if exScope:
                 return False
+    return True

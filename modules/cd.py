@@ -1,5 +1,5 @@
 import os,uuid
-def ContentDiscovery(target, threads, recursive):
+def ContentDiscovery(target, threads, recursive,program):
     filename = f"programs/{program}/{uuid.uuid4()}"
     os.system(f"./theeCD/theeCD -w theeCD/wordlists/ -url {target} -t {threads} -r {recursive}|tee {filename}")
     with open(filename, "r") as f:

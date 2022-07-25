@@ -17,7 +17,7 @@ def main(program=None,threads=None,recursiveness=None):
         inScope = checkScope(include, exclude,i)
         if not inScope:
             continue
-        cd = ContentDiscovery(f"https://{i}/", threads, recursiveness)
+        cd = ContentDiscovery(f"https://{i}/", threads, recursiveness,program)
         for j in cd:
             pm = ParamMiner(j, threads)
             for k in pm:

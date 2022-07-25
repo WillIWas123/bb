@@ -8,12 +8,15 @@ def subfuz(domains, program):
         if i[0] == "*":
             domain = i[2:]
             output.append(domain)
-            os.system(f"python3 /opt/subfuz/subfuz.py -d {domain} -all -csv {outfile}")
+            os.system(f"python3 ./subfuz/subfuz.py -d {domain} -all -csv {outfile}")
         else:
             output.append(i)
-        with open(outfile, "r") as f:
-            data=f.read().split("\n")
-        for j in data:
-            subdomain=j.split(",")[0]
-            output.append(subdomain)
+        try:
+            with open(outfile, "r") as f:
+                data=f.read().split("\n")
+            for j in data:
+                subdomain=j.split(",")[0]
+                output.append(subdomain)
+        except:
+            pass
     return output
