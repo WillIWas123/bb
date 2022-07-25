@@ -1,7 +1,18 @@
 import json, re
 def getDomains(program):
-    with open(f"programs/{program}/domains.txt", "r") as f:
-        return f.read().split("\n")
+    output=[]
+    with open(f"programs/{program}/config.json", "r") as f:
+        data=json.loads(f.read())
+    scope=data["target"]["scope"]["include"]
+    for i in scope:
+        if i["enabled"]:
+            host=i["host"].replace("^","").replace("$","").replace("\\","")
+            if host[0] == ".":
+                host=host[1:]
+            output.append(host)
+    return output
+
+        
 
 def getScope(program):
     with open(f"programs/{program}/config.json", "r") as f:

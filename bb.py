@@ -12,6 +12,7 @@ def main(program=None,threads=None,recursiveness=None):
         recursiveness = sys.argv[3]
     include, exclude = getScope(program)
     domains=getDomains(program)
+    print(domains)
     subdomains = subfuz(domains, program)
     for i in subdomains:
         inScope = checkScope(include, exclude,i)
