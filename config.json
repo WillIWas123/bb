@@ -1,0 +1,61 @@
+{
+    "config":{
+        "threads": 5,
+        "dns_fallback": "8.8.8.8",
+        "dns_fallback_protocol": "UDP",
+        "dns_fallback_record": "ANY",
+        "dns_override": null,
+        "dns_override_protocol": null,
+        "dns_override_record": null,
+        "throttle": 0,
+        "timeout": 3,
+        "retry": 3,
+        "deep_domains":["admin", "api", "app", "backup", "beta", "blog", "cdn", "client", "cpanel", "customer",
+                        "demo", "dev", "devapp", "email", "gw", "intra", "mail", "new", "old", "owa", "phpmyadmin",
+                        "prod", "remote", "security", "stage", "store", "support", "test", "webconf", "webmail",
+                        "www"],
+        "txt_record_search":["v=spf","v=DKIM", "v=DMARC"],
+        "error_file":"error.log"
+    },
+    "plugins":{
+        "_comment":  "name of plugin config must be equal to constant  'NAME' for the plugin",
+        "_comment2": "set enable to true for subfuz to include listed plugin.",
+        "virustotal":{
+            "enable": false,
+            "api-key":""
+        },
+        "crtsh":{
+            "enable": true
+        },
+        "censys":{
+            "enable": false,
+            "uid": "",
+            "secret": "",
+            "max_records": 100
+        },
+        "hackertarget":{
+            "enable": true
+        },
+        "microsoft": {
+            "enable": true
+        },
+        "citrix": {
+            "enable": true
+        },
+        "aws": {
+            "enable": true
+        },
+        "circl": {
+            "enable": false,
+            "user": "<user>",
+            "pass": "<password>"
+        },
+        "dnsdumpster": {
+            "enable": true
+        },
+        "securitytrails": {
+            "enable": false,
+            "apikey": "<apikey>"
+        }
+    }
+}
