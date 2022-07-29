@@ -3,6 +3,7 @@ from modules.pm import ParamMiner
 from modules.cd import ContentDiscovery
 from modules.xss import XSStrike
 from modules.tplmap import TPLMap
+from modules.sqlmap import SQLMap
 from modules.scope import getScope, checkScope,getDomains
 from modules.subfuz import subfuz
 
@@ -24,6 +25,7 @@ def main(program=None,threads=None,recursiveness=None):
             for k in pm:
                 XSStrike(k, threads,program)
                 TPLMap(k,threads,program)
+                SQLMap(k,threads,program)
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
